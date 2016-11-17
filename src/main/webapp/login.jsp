@@ -1,12 +1,34 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>canvas</title>
-    <style>body{text-align: center;background: #F7FAFC;overflow: hidden;background: #fff;}#canvas{display: inline-block;}</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
 </head>
 <body>
-<canvas id="canvas"></canvas>
+    <form action="${ctx}/User/login.do" method="post">
+        <table>
+            <tr>
+                <td>
+                    用户名:<input id="username" name="username"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    密&nbsp;码:<input id="password" name="password"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>提交</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+<canvas id="canvas">
+</canvas>
 <script>
     //定义画布宽高和生成点的个数
     var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 35;
@@ -109,7 +131,6 @@
             draw();
         }, 16);
     }
-
 </script>
 </body>
 </html>
